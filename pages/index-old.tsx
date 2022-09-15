@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import clientPromise from '../lib/mongodb'
 import { InferGetServerSidePropsType } from 'next'
+import Index from './index'
 
 export async function getServerSideProps(context) {
   try {
@@ -82,6 +83,7 @@ export default function Home({
             </p>
           </a>
         </div>
+        <Index isConnected/>
       </main>
 
       <footer>

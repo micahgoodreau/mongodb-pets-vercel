@@ -27,7 +27,7 @@ const PetPage = ({ pet }) => {
         <img src={pet.image_url} />
         <h5 className="pet-name">{pet.name}</h5>
         <div className="main-content">
-          <p className="pet-name">{pet.name}</p>
+          <p className="pet-name">Pet Name: {pet.name}</p>
           <p className="owner">Owner: {pet.owner_name}</p>
 
           {/* Extra Pet Info: Likes and Dislikes */}
@@ -68,6 +68,7 @@ export async function getServerSideProps({ params }) {
 
   const pet = await Pet.findById(params.id).lean()
   pet._id = pet._id.toString()
+  console.log(pet)
 
   return { props: { pet } }
 }

@@ -58,6 +58,7 @@ export async function getServerSideProps() {
     pet._id = pet._id.toString()
     return pet
   })
+  console.log(pets)
 
   return { props: { pets: pets } }
 }
